@@ -24,9 +24,6 @@ while True:
     genderInput = values[1]
     countryInput = values[2]
 
-    #Want to combine these 3 below but don't know how
-
-    
     result = df.loc[(df['age'] == int(ageInput)) & (df['gender'] == genderInput) & (df['native-country'] == countryInput)]
     result_sorted = result.sort_values(by='capital-gain', ascending=False).head(5)
     print(result_sorted[['occupation', 'capital-gain']])
