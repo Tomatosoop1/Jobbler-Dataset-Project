@@ -14,7 +14,7 @@ layout = [[sg.Text('Jobbler', size=(20, 1), key='-text-', font=font)],
           
 ]
 
-window = sg.Window('Jobber', layout,size=(300,500))
+window = sg.Window('Jobbler', layout,size=(300,500))
 
 while True:
     event, values = window.read()
@@ -26,8 +26,10 @@ while True:
 
     #Want to combine these 3 below but don't know how
 
+    
     result = df.loc[(df['age'] == int(ageInput)) & (df['gender'] == genderInput) & (df['native-country'] == countryInput)]
+    result_sorted = result.sort_values(by='capital-gain', ascending=False).head(5)
+    print(result_sorted[['occupation', 'capital-gain']])
 
-    print(result["capital-gain"].nlargest(5))
 
 window.close()
