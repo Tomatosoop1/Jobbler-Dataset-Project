@@ -5,7 +5,6 @@
 
 Note: Because the dataset is not too big alot of countries, ages etc are not includes and the program doesnt give a fully accurate result. Don't take this as a direct 100% True answer to the best paying jobs it's just a project i made for fun.
 
-<<<<<<< HEAD
 Note: about 90% off the data comes from the United-States so i would recommend to input that! 
 Also when inputing Gender do Male or Female
 
@@ -13,4 +12,4 @@ Also when inputing Gender do Male or Female
 Thanks for downloading!
 =======
 Also thanks for downloading!
->>>>>>> ea9adecfc7c8f99e018d05a74f821647dfa1491f
+
