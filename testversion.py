@@ -3,18 +3,18 @@ import pandas as pd
 import matplotlib as plt
 import numpy as np
 
-df = pd.read_csv('[Python] Data Set Project/Jobbler-Dataset-Project/train.csv') 
+df = pd.read_csv('[Python] Data Set Project/Jobbler-Dataset-Project/train.csv')
 sg.theme('DarkTeal9')
 font = ("Arial", 20)
 layout = [[sg.Text('Jobbler', size=(20, 1), key='-text-', font=font)],
           [sg.Text('An app developed by Luis Wettre\nto find the highest paying job for you!')],
-          [sg.Text('Age')],[sg.InputText()],[sg.Text('Gender')],[sg.InputText()],[sg.Text("Country")],[sg.InputText()],
+          [sg.Text('Age')],[sg.InputText()],[sg.Text('Gender')],[sg.Combo(["Male","Female"])],[sg.Text("Native-Country")],[sg.Combo(['United-States'])],
           [sg.Button('Go!')]+[sg.Button('Cancel')],
           [sg.Text('Best Paying Jobs for you!')],
           [sg.Output(size=(50,10))]
 ]
 
-window = sg.Window('Jobbler', layout,size=(300,500))
+window = sg.Window('Jobbler', layout,size=(500,500))    
 
 while True:
     event, values = window.read()
