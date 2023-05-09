@@ -18,19 +18,21 @@ layout = [[sg.Text('Jobbler', size=(20, 1), key='-text-', font=font)],
           [sg.Output(size=(50,10))] 
 ]
 
+#Icon is from https://icons8.com/icon/eKxawYaWrcEZ/job
 window = sg.Window('Jobbler', layout,size=(350,450), icon="[Python] Data Set Project/Jobbler-Dataset-Project/icons8_job_64__1__wgs_icon.ico")
 while True:
     event, values = window.read()
-    if event == sg.WIN_CLOSED or event == 'Cancel': # if user closes window or clicks cancel
+    if event == sg.WIN_CLOSED or event == 'Cancel': # if user closes window or clicks cancel    
         break
 
     elif event == 'Go!':
-        result = df.loc[(df['Job Title'] == values[0])].sort_values(by='Salay', ascending=False).head(5)
+        result = df.loc[(df['Job Title'] == values[0])].sort_values(by='Salary', ascending=False).head(5)
         print(result[['Age','Job Title', 'Salary']])
 
+    #Does not work currently
     elif event == 'Graph':
         result = df.loc[(df['Job Title'] == values[0])].sort_values(by='Salary', ascending=False).head(5)
         print(result[['Age','Job Title', 'Salary']])
         plt.plot(5,5)
-
+        
 window.close()
