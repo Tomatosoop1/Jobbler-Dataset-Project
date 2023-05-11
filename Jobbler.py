@@ -28,5 +28,10 @@ while True:
     elif event == 'Go!':
         result = df.loc[(df['Job Title'] == values[0])].sort_values(by='Salary', ascending=False).head(5)
         print(result[['Age','Job Title', 'Salary']])
+   
+    elif event == 'Graph':
+        result = df.loc[(df['Job Title'] == values[0])].sort_values(by='Salary', ascending=False).head(5)
+        result.plot(x='Age', y='Salary', kind='line', xlim=(result['Age'].min(), result['Age'].max()))      
+        plt.show()  
         
 window.close()
